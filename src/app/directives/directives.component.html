@@ -1,0 +1,14 @@
+
+<h1 *ngIf="isMorning">good morning everyone</h1>
+<h1 *ngIf="!isMorning">good afternoon everyone</h1>
+
+<h4>{{state}}</h4>
+<h4 *ngFor="let item of states">{{item}}</h4>
+<ol>
+    <li *ngFor="let price of prices">{{price}}</li>
+
+</ol>
+
+<select>
+    <option *ngFor="let product of products">{{product}}</option>
+</select>
