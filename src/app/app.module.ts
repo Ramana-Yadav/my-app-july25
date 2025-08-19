@@ -19,6 +19,7 @@ import { LogoutComponent } from './logout/logout.component';
 import { FormsModule } from '@angular/forms';
 import { DirectivesComponent } from './directives/directives.component';
 import { EmployeeComponent } from './employee/employee.component';
+import { ProductTaskComponent } from './product-task/product-task.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { EmployeeComponent } from './employee/employee.component';
     BmiComponent,
     LogoutComponent,
     DirectivesComponent,
-    EmployeeComponent
+    EmployeeComponent,
+    ProductTaskComponent
   ],
   imports: [
     BrowserModule,

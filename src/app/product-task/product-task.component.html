@@ -1,0 +1,64 @@
+<div class="parent">
+    <div class="top">
+ <div class="left">
+<input  class=" mt-2 ms-2" type="text" placeholder="search"> 
+<button  class="btn btn-primary mt-2 ms-2">only free delivery</button><br>
+<button class="btn btn-primary mt-2 ms-2" (click)="sort()" >price low to high</button>
+<button class="btn btn-primary mt-2 ms-2" (click)="app()" >price high to low</button>
+<button class="btn btn-primary mt-2 ms-2" (click)="ball()" >rating low to high</button>
+<button class="btn btn-primary mt-2 ms-2" (click)="cat()" >rating high to low</button><br>
+<button class="btn btn-info mt-2 ms-2" (click)=" applyDiscount()">apply 50% discount</button>
+<button class="btn btn-info mt-2 ms-2" (click)=" deliveryCharges()">price with delivery charges</button><br>
+<button class="btn btn-dark btn-sm mt-2 ms-2"  (click)=" TotalPrice()">Total price</button>
+<button class="btn btn-dark btn-sm mt-2 ms-2">Total card items</button></div>
+<div class="right">
+    <label class="mt-2 ms-2 mx-2">name:</label>
+    <input type="text"><br>
+    <label  class="mt-2 ms-2 mx-2">place:</label>
+    <input type="text"><br>
+    <label  class="mt-2 ms-2 mx-2">rating:</label>
+    <input type="text"><br>
+    <label  class="mt-2 ms-2 mx-2">free delivery:</label>
+    <input  class="mt-2 ms-2 mx-2" type="radio" name="freedelivery">
+     <label>Yes</label>
+     <input type="radio" name="freedelivery">
+     <label>No</label> <br>
+     <button class="btn btn-success mt-2 ms-2 mx-2">Add to cart</button>
+
+</div>
+
+</div>
+<div class="bottom">
+<table border="1" class="table">
+    <thead>
+        <tr>
+             <th>s no</th>
+            <th>name</th>
+            <th>price</th>
+            <th>rating</th>
+            <th>free delivery</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+          <tbody>
+            <tr *ngFor="let product of products; let i=index">
+                <td>{{i+1}}</td> 
+                 <td>{{product.name}}</td>
+            <td>{{product.price}}</td>
+             <td>{{product.rating}}</td>
+              <td>{{product.freedelivery}}</td>
+            <!-- <td [ngStyle]="{'color':product.price>=2?'green':'red'}">{{employee.free delivery}}</td>
+            <td [ngClass]="{'first':employee.package<500000, 'second':(employee.package>=500000) && (employee.package<1000000),'third':employee.package>1000000}">{{employee.package | currency}}</td> -->
+        
+             
+            <td>
+                <button class="btn btn-danger"  (click)="delete(i)">delete</button>
+            </td>
+
+            </tr>
+
+          </tbody>
+
+
+</table>
+    </div></div>

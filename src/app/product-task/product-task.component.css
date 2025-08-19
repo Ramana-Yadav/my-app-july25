@@ -1,0 +1,26 @@
+.parent{
+    width: 100%;
+    height: 100%;
+    background-color: white;
+}
+.top{
+     width: 100%;
+    height: 40%;
+    background-color: green;
+    display: flex;
+}
+.left{
+     width: 50%;
+    height: 100%;
+    background-color:pink;
+}
+.right{
+     width: 50%;
+    height: 100%;
+    background-color:lightblue;
+}
+.bottom{
+     width: 100%;
+    height: 60%;
+    background-color:yellow;
+}

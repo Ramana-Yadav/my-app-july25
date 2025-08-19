@@ -20,15 +20,48 @@ export class EmployeeComponent {
     { name: 'sujith', experience: 3.5, package: 350000, role: 'Testing Engineer' },
   ];
 
-  date=new Date();
+  // date=new Date();
   sort(){
     this.employees.sort((a:any , b:any)=> a.package-b.package);
   }
 
-  delete(index:number) {
+   delete(index:number) {
     
-      this.employees.splice(index,1);
+       this.employees.splice(index,1);
+   }
+  roleFilter:string='';
+  filter(){
+    this.employees=this.employees.filter((employee:any)=>employee.role==this.roleFilter);
   }
   
+  name:string='';
+  nameFilter(){
+    this.employees=this.employees.filter((employee:any)=>employee.name.includes(this.name));
+  }
 
+  bonus(){
+    this.employees=this.employees.map((employee:any)=>{
+      employee.package=employee.package+30000;
+      return employee;
+    });
+  }
+
+  costToCompany(){
+              var totalcost=this.employees.reduce((sum:any, employee:any)=>sum+employee.package,0);
+              alert(totalcost);
+  }
+
+empName:string='';
+experience:number=0;
+package:number=0;
+role:string='';
+addRecord(){
+  var user={
+    name : this.empName,
+experience: this.experience,
+package: this.package,
+role:this.role
+  }
+  this.employees.unshift(user);
+}
 }
