@@ -15,6 +15,8 @@ import { DirectivesComponent } from './directives/directives.component';
 import { EmployeeComponent } from './employee/employee.component';
 import { ProductTaskComponent } from './product-task/product-task.component';
 import { VehiclesComponent } from './vehicles/vehicles.component';
+import { MailComponent } from './mail/mail.component';
+import { FlipkartComponent } from './flipkart/flipkart.component';
 
 const routes: Routes = [
             {path:'',component:LoginComponent},//default routing
@@ -32,6 +34,8 @@ const routes: Routes = [
              {path:'employee',component:EmployeeComponent},
              {path:'product-task',component:ProductTaskComponent},
              {path:'vehicles',component:VehiclesComponent},
+             {path:'mail',component:MailComponent},
+              {path:'flipkart',component:FlipkartComponent},
              ]},//parent routing
             {path:'**',component:ErrorComponent},
             //wild card/error routing

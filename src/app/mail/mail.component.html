@@ -1,0 +1,9 @@
+
+<ol>
+    <li *ngFor="let mails of mail" [ngStyle]="{'color':mails.completed==true?'red':'green'}">{{mails.completed}}
+        
+    <!-- {{mails.id}} -->
+    {{mails.title}}</li>
+     
+   
+</ol>

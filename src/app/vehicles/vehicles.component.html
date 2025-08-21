@@ -1,6 +1,42 @@
-<p>vehicles works!</p>
+<h2>vehicles</h2>
 
-<table class="table">
+<input type="text" [(ngModel)]="searchKeyword" (keyup)="search()">
+
+<select [(ngModel)]="columnName">
+    <option value="vehicle">vehicle name</option>
+     <option value="manufacturer"> manufacturer</option>
+      <option value="cost">cost</option>
+       <option value="color">color</option>
+</select>
+
+<select [(ngModel)]="sortorder">
+    <option value="asc">ascending order</option>
+     <option value="desc"> descending order</option>
+
+</select>
+
+<button class="btn btn-warning" (click)="sort()">sort</button>
+
+
+<select [(ngModel)]="items">
+    <option value="5"> 5</option>
+     <option value="10"> 10</option>
+      <option value="15">15</option>
+       <option value="20">20</option>
+</select>
+
+<select [(ngModel)]="pageNumber">
+    <option value="1"> 1</option>
+     <option value="2"> 2</option>
+      <option value="3">3</option>
+       <option value="4">4</option>
+       <option value="5">5</option>
+</select>
+
+<button class="btn  btn-success" (click)="pagination()">pagination</button>
+
+
+<table class="table" >
     <thead>
         <tr>
              <th>vehicle</th>
@@ -10,9 +46,10 @@
             <th>fuel</th>
             <th>color</th>
             <th>image</th>
-            <th>cost</th>
-            <th>tyres</th>
+            <!-- <th>cost</th>
+            <th>tyres</th> -->
             <th>id</th>
+            <th>Action</th>
         </tr>
     </thead>
           <tbody>
@@ -23,10 +60,12 @@
                     <td> {{vehicle.type}}</td>
                     <td> {{vehicle.fuel}}</td>
                     <td> {{vehicle.color}}</td>
-                    <td> <img src="{{vehicle.image}}" alt=""></td>
-                    <td> {{vehicle.cost}}</td>
-                    <td> {{vehicle.tyres}}</td>
+                    <td> <img src="{{vehicle.image}}" width="100px" height="100px"></td>
+                    <!-- <td> {{vehicle.cost}}</td>
+                    <td> {{vehicle.tyres}}</td> -->
                     <td> {{vehicle.id}}</td>
+
+                    <button class="btn btn-danger" (click)="delete(vehicle.id)">Delete</button>
                  </tr>
 
           </tbody>
