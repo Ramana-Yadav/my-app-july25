@@ -17,6 +17,9 @@ import { ProductTaskComponent } from './product-task/product-task.component';
 import { VehiclesComponent } from './vehicles/vehicles.component';
 import { MailComponent } from './mail/mail.component';
 import { FlipkartComponent } from './flipkart/flipkart.component';
+import { PinInterestComponent } from './pin-interest/pin-interest.component';
+import { WeatherreportComponent } from './weatherreport/weatherreport.component';
+import { CreateVehicleComponent } from './create-vehicle/create-vehicle.component';
 
 const routes: Routes = [
             {path:'',component:LoginComponent},//default routing
@@ -36,6 +39,10 @@ const routes: Routes = [
              {path:'vehicles',component:VehiclesComponent},
              {path:'mail',component:MailComponent},
               {path:'flipkart',component:FlipkartComponent},
+              {path:'pinInterest',component:PinInterestComponent},
+              {path:'weatherreport',component:WeatherreportComponent},
+              {path:'create-vehicle',component:CreateVehicleComponent},
+
              ]},//parent routing
             {path:'**',component:ErrorComponent},
             //wild card/error routing

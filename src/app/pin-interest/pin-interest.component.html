@@ -1,0 +1,12 @@
+<p>pin-interest </p>
+<div class="parent">
+    <div class="card" *ngFor="let card of pinInterest">
+        <div class="image-wrapper">
+        <img src={{card.download_url}}>
+        <div class="overlay">
+            <div class="author-name">{{card.author}}</div>
+            <a [href]="card.download_url"target="_blank" rel="noopener noreferrer">Download</a>      
+            </div>
+        </div>
+    </div>
+</div>
