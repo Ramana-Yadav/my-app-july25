@@ -1,0 +1,56 @@
+<p>id-card works!</p>
+
+<input type="text" [(ngModel)]="searchKeyword" (keyup)="search()">
+
+<!-- sorting  -->
+ <select [(ngModel)]="columnName">
+    <option value="name"> name</option>
+     <option value="dob"> dob</option>
+      <option value="city">city</option>
+       <option value="email">email</option>
+</select>
+
+<select [(ngModel)]="sortorder">
+    <option value="asc">ascending order</option>
+     <option value="desc"> descending order</option>
+
+</select>
+
+<button class="btn btn-warning" (click)="sort()">sort</button>
+
+
+
+
+<div class="parent">
+
+     <div class="card"  *ngFor="let student of Cards">
+     
+    <div class="top">
+        <div class="topleft">
+        <img src="{{student.school_logo}}" alt=""></div>
+        <div class="topright">
+            <h4>{{student.school_name}}</h4></div>
+
+    </div>
+     <div class="middle">
+        <div class="left">
+           <p> Name: {{student.name}}</p>
+           <p> DOB:{{student.dob}}</p>
+           <p>City: {{student.city}}</p>
+           <p> Email:{{student.email}}</p>
+           <p> id:{{student.id}}</p>
+        </div>
+        <div class="right">
+            <img src={{student.profile_picture}} alt="" width="200px" height="250px">
+        </div>
+     </div>
+      <div class="bottom">
+        <button class="btn btn-info">view</button>
+        <button class="btn btn-warning">Edit</button>
+        <button class="btn btn-danger"  (click)="delete(student.id)">Delete </button>
+      </div>
+    
+    </div>
+
+
+</div>

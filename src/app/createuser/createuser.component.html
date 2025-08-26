@@ -1,0 +1,68 @@
+<p>createuser works!</p>
+<form [formGroup]="userForm">
+      <label>Name</label>
+      <input type="text" formControlName="name"><br>
+
+      <div *ngIf="userForm.get('name')?.touched&& userForm.get('name')?.invalid">
+        <p *ngIf="userForm.get('name')?.errors?.['required']">name is required</p>
+        <p *ngIf="userForm.get('name')?.errors?.['minlength']">name is min 6 characters</p>
+         <p *ngIf="userForm.get('name')?.errors?.['maxlength']">name is max 10 characters</p>
+
+      </div>
+      <label>Email</label>
+      <input type="email" formControlName="email"><br>
+      <label>Password</label>
+      <input type="password" formControlName="password"><br>
+      <label>Mobile Number</label>
+      <input type="number" formControlName="mobile"><br>
+      
+      <!-- Nested Form Groups -->
+
+     <div formGroupName="address">
+      <label>city</label>
+      <input type="text" formControlName="city"><br>
+      <label>state</label>
+      <input type="text" formControlName="state"><br>
+      <label>PinCode</label>
+      <input type="number" formControlName="pincode"><br>
+      </div>
+
+      <!-- dynamic Forms -->
+
+      <label>Type:</label><br>
+      <input type="radio"  name="type" formControlName="type" value="dayscholar">
+      <label>Dayscholar</label>
+      <input type="radio"  name="type" formControlName="type" value="residential">
+      <label> Residential</label><br>
+
+      <div *ngIf="userForm.get('type')?.value=='dayscholar'">
+        <label>bussfee:</label>
+        <input type="number" formControlName="busfee"><br>
+      </div>
+
+      <div *ngIf="userForm.get('type')?.value=='residential'">
+        <label>Hostelfee:</label>
+        <input type="number" formControlName="hostelfee"><br>
+      </div>
+
+
+<!-- FormArray -->
+ <h3>Cards</h3>
+ <button (click)="addcard()" class="btn btn-primary">Add Card</button>
+ <div formArrayName="cards">
+    <div *ngFor="let card of cardsFormArray.controls;let i=index">
+        <div formGroupName="{{i}}">
+            <h3>card{{i+1}}</h3>
+            <label>card number</label>
+            <input type="number" formControlName="cardnumber"><br>
+            <label>Expiry Date:</label>
+            <input type="month" formControlName="expiry"><br>
+            <label>cvv</label>
+            <input type="number" formControlName="cvv"><br>
+            <button class="btn btn-danger" (click)="delete(i)">Delete</button>
+
+        </div>
+    </div>
+ </div>
+
+    <button (click)="submit()" class="btn btn-success"> Submit</button>

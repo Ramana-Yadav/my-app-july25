@@ -27,6 +27,10 @@ import { FlipkartComponent } from './flipkart/flipkart.component';
 import { PinInterestComponent } from './pin-interest/pin-interest.component';
 import { WeatherreportComponent } from './weatherreport/weatherreport.component';
 import { CreateVehicleComponent } from './create-vehicle/create-vehicle.component';
+import { IdCardComponent } from './id-card/id-card.component';
+import { CreateuserComponent } from './createuser/createuser.component';
+import { AddidCardComponent } from './addid-card/addid-card.component';
+import { AccountComponent } from './account/account.component';
 
 
 @NgModule({
@@ -53,7 +57,11 @@ import { CreateVehicleComponent } from './create-vehicle/create-vehicle.componen
     FlipkartComponent,
     PinInterestComponent,
     WeatherreportComponent,
-    CreateVehicleComponent
+    CreateVehicleComponent,
+    IdCardComponent,
+    CreateuserComponent,
+    AddidCardComponent,
+    AccountComponent
   ],
   imports: [
     BrowserModule,

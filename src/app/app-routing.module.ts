@@ -20,6 +20,10 @@ import { FlipkartComponent } from './flipkart/flipkart.component';
 import { PinInterestComponent } from './pin-interest/pin-interest.component';
 import { WeatherreportComponent } from './weatherreport/weatherreport.component';
 import { CreateVehicleComponent } from './create-vehicle/create-vehicle.component';
+import { IdCardComponent } from './id-card/id-card.component';
+import { CreateuserComponent } from './createuser/createuser.component';
+import { AddidCardComponent } from './addid-card/addid-card.component';
+import { AccountComponent } from './account/account.component';
 
 const routes: Routes = [
             {path:'',component:LoginComponent},//default routing
@@ -42,6 +46,10 @@ const routes: Routes = [
               {path:'pinInterest',component:PinInterestComponent},
               {path:'weatherreport',component:WeatherreportComponent},
               {path:'create-vehicle',component:CreateVehicleComponent},
+              {path:'idCard',component:IdCardComponent},
+              {path:'createuser',component:CreateuserComponent},
+              {path:'addidCard',component:AddidCardComponent},
+              {path:'account',component:AccountComponent},
 
              ]},//parent routing
             {path:'**',component:ErrorComponent},
