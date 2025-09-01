@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ErrorComponent } from './error/error.component';
@@ -68,13 +68,18 @@ const routes: Routes = [
               {path:'parent',component:ParentComponent},
               {path:'rating',component:RatingComponent},
 
+                {
+    path: 'payments', // The URL path for this lazy-loaded module
+    loadChildren: () => import('./payments/payments.module').then(m => m.PaymentsModule)
+  }
+
              ]},//parent routing
             {path:'**',component:ErrorComponent},
             //wild card/error routing
             ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes,{preloadingStrategy:PreloadAllModules})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
