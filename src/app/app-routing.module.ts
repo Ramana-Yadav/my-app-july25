@@ -24,10 +24,18 @@ import { IdCardComponent } from './id-card/id-card.component';
 import { CreateuserComponent } from './createuser/createuser.component';
 import { AddidCardComponent } from './addid-card/addid-card.component';
 import { AccountComponent } from './account/account.component';
+import { VehicleDetailsComponent } from './vehicle-details/vehicle-details.component';
+import { AddaccountComponent } from './addaccount/addaccount.component';
+import { AccountdetailsComponent } from './accountdetails/accountdetails.component';
+import { IdCarddetalsComponent } from './id-carddetals/id-carddetals.component';
+import { AuthenticationGuard } from './authentication.guard';
+import { Sibling1Component } from './sibling1/sibling1.component';
+import { ParentComponent } from './parent/parent.component';
+import { RatingComponent } from './rating/rating.component';
 
 const routes: Routes = [
             {path:'',component:LoginComponent},//default routing
-            {path:'dashboard',component:DashboardComponent,children:[
+            {path:'dashboard',component:DashboardComponent, canActivate:[AuthenticationGuard],children:[
               //child routing
               {path:'home',component:HomeComponent},
             {path:'gallery',component:GalleryComponent},
@@ -50,6 +58,15 @@ const routes: Routes = [
               {path:'createuser',component:CreateuserComponent},
               {path:'addidCard',component:AddidCardComponent},
               {path:'account',component:AccountComponent},
+              {path:'vehicle-details/:id',component:VehicleDetailsComponent},
+              {path:'edit-vehicle/:id',component:CreateVehicleComponent},
+              {path:'addaccount',component:AddaccountComponent},
+              {path:'accountdetails',component:AccountdetailsComponent},
+              {path:'idCarddetals/:id',component:IdCarddetalsComponent},
+              {path:'editidCards/:id',component:AddidCardComponent},
+              {path:'sibling',component:Sibling1Component},
+              {path:'parent',component:ParentComponent},
+              {path:'rating',component:RatingComponent},
 
              ]},//parent routing
             {path:'**',component:ErrorComponent},

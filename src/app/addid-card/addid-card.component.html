@@ -1,4 +1,9 @@
 <p>addid-card works!</p>
+
+<h4 *ngFor="!id">Creat idCard</h4>
+<h4 *ngFor="id">Edit idCard</h4>
+
+
 <form [formGroup]="idCardForm">
       <label>name</label>
       <input type="text" formControlName="name"><br>
@@ -10,8 +15,6 @@
       <input type="text" formControlName="dob"><br>
        <label>email </label>
       <input type="text" formControlName="email"><br>
-       <label>id</label>
-      <input type="text" formControlName="id"><br>
        <label>profile_picture</label>
       <input type="text" formControlName="profile_picture"><br>
        

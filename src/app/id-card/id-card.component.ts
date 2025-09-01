@@ -52,6 +52,24 @@ sort(){
     )
 }
 
+//paginated
+items:number=0;
+pageNumber:number=0;
+pagination(){
+  this.idCardservices.getPaginatedidCard(this.items,this.pageNumber).subscribe(
+    (data:any)=>{
+      console.log(data);
+      this.Cards=data;
+      // console.log("account data:", this.account);
+     },(err:any)=>{
+      alert("internal server error");
+     }
+    )
+  }
+
+
+
+
 //deleting by id
 
 delete(id:any){

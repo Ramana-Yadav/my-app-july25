@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IdCardService } from '../id-card.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
@@ -16,18 +16,35 @@ export class AddidCardComponent {
            city:new FormControl(),
            dob:new FormControl(),
            email:new FormControl(),
-           id:new FormControl(),
            profile_picture:new FormControl(),
            
 });
 
-constructor(private idCardservices:IdCardService, private _router:Router){}
+id:number=0;
+constructor(private idCardsservice:IdCardService, private _router:Router, private _activatedRoute:ActivatedRoute){
+  _activatedRoute.params.subscribe(
+    (data:any)=>{
+      console.log(data);
+      this.id=data.id;
+      console.log(this.id);
+
+    idCardsservice.getidCards(this.id).subscribe(
+      (data:any)=>{
+        console.log(data);
+        this.idCardForm.patchValue(data);
+      }
+    )
+
+    }
+  )
+}
 
 submit(){
-  console.log(this.idCardForm.value);
-  this.idCardservices.createidCard(this.idCardForm.value).subscribe(
+  if(this.id){
+     this.idCardsservice.updateidCards(this.id, this.idCardForm.value).subscribe(
     (data:any)=>{
-      alert(" added successfully");
+      console.log(data);
+      alert("idCard updated successfully");
       this._router.navigateByUrl
       ("dashboard/idCard");
     },(err:any)=>{
@@ -35,5 +52,17 @@ submit(){
     }
   )
 }
+else{
+  console.log(this.idCardForm.value);
+  this.idCardsservice
+  .createidCard(this.idCardForm.value).subscribe(
+    (data:any)=>{
+      alert("idCard added successfully");
+      this._router.navigateByUrl("/dashboard/idCard");
 
+    },(err:any)=>{
+alert("internal server error")}
+  )
 }
+}}
+

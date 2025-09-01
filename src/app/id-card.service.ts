@@ -12,6 +12,13 @@ export class IdCardService {
         return this._httpClient.get('https://6128991386a213001729f9df.mockapi.io/test/v1/student');
       }
 
+  //view details
+
+getidCards(id:any):Observable<any>{
+        return this._httpClient.get('https://6128991386a213001729f9df.mockapi.io/test/v1/student/'+id);
+      }
+
+
 //filter idCard
 
  getFilterdidCard(term:any):Observable<any>{
@@ -32,6 +39,17 @@ export class IdCardService {
 
  createidCard(data:any):Observable<any>{
     return this._httpClient.post('https://6128991386a213001729f9df.mockapi.io/test/v1/student/',data);
+  }
+//paginated
+
+getPaginatedidCard(limit:any,page:any):Observable<any>{
+    return this._httpClient.get('https://6128991386a213001729f9df.mockapi.io/test/v1/student?limit='+limit+'&page='+page);
+  }
+
+//update/edit the details
+
+updateidCards(id:any, data:any):Observable<any>{
+    return this._httpClient.put('https://6128991386a213001729f9df.mockapi.io/test/v1/student/'+id,data);
   }
 
 

@@ -18,6 +18,27 @@
 
 <button class="btn btn-warning" (click)="sort()">sort</button>
 
+<select [(ngModel)]="items">
+    <option value="5"> 5</option>
+     <option value="10"> 10</option>
+      <option value="15">15</option>
+       <option value="20">20</option>
+</select>
+
+<select [(ngModel)]="pageNumber">
+    <option value="1"> 1</option>
+     <option value="2"> 2</option>
+      <option value="3">3</option>
+       <option value="4">4</option>
+       <option value="5">5</option>
+</select>
+
+<button class="btn  btn-success" (click)="pagination()">pagination</button>
+
+
+
+
+
 
 
 
@@ -38,15 +59,15 @@
            <p> DOB:{{student.dob}}</p>
            <p>City: {{student.city}}</p>
            <p> Email:{{student.email}}</p>
-           <p> id:{{student.id}}</p>
+          
         </div>
         <div class="right">
             <img src={{student.profile_picture}} alt="" width="200px" height="250px">
         </div>
      </div>
       <div class="bottom">
-        <button class="btn btn-info">view</button>
-        <button class="btn btn-warning">Edit</button>
+        <button class="btn btn-info"  routerLink="/dashboard/idCarddetals/{{student.id}}">view</button>
+        <button class="btn btn-warning" routerLink="/dashboard/editidCards/{{student.id}}">Edit</button>
         <button class="btn btn-danger"  (click)="delete(student.id)">Delete </button>
       </div>
     

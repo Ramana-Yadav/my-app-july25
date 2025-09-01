@@ -65,8 +65,19 @@
                     <td> {{vehicle.tyres}}</td> -->
                     <td> {{vehicle.id}}</td>
 
-                    <button class="btn btn-danger" (click)="delete(vehicle.id)">Delete</button>
-                 </tr>
+                   <td>
+                     <button class="btn btn-danger" (click)="delete(vehicle.id)">Delete</button>
+
+                     </td>
+                      <td>
+                     <button class="btn btn-primary" routerLink="/dashboard/vehicle-details/{{vehicle.id}}">view</button>
+                 </td>
+
+                 <td>
+                     <button class="btn btn-warning"  routerLink="/dashboard/edit-vehicle/{{vehicle.id}}">Edit</button>
+                 </td>
+
+                </tr>
 
           </tbody>
           </table>

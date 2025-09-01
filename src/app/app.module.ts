@@ -31,6 +31,15 @@ import { IdCardComponent } from './id-card/id-card.component';
 import { CreateuserComponent } from './createuser/createuser.component';
 import { AddidCardComponent } from './addid-card/addid-card.component';
 import { AccountComponent } from './account/account.component';
+import { VehicleDetailsComponent } from './vehicle-details/vehicle-details.component';
+import { AddaccountComponent } from './addaccount/addaccount.component';
+import { AccountdetailsComponent } from './accountdetails/accountdetails.component';
+import { IdCarddetalsComponent } from './id-carddetals/id-carddetals.component';
+import { Sibling1Component } from './sibling1/sibling1.component';
+import { Sibling2Component } from './sibling2/sibling2.component';
+import { ParentComponent } from './parent/parent.component';
+import { ChildComponent } from './child/child.component';
+import { RatingComponent } from './rating/rating.component';
 
 
 @NgModule({
@@ -61,7 +70,16 @@ import { AccountComponent } from './account/account.component';
     IdCardComponent,
     CreateuserComponent,
     AddidCardComponent,
-    AccountComponent
+    AccountComponent,
+    VehicleDetailsComponent,
+    AddaccountComponent,
+    AccountdetailsComponent,
+    IdCarddetalsComponent,
+    Sibling1Component,
+    Sibling2Component,
+    ParentComponent,
+    ChildComponent,
+    RatingComponent
   ],
   imports: [
     BrowserModule,
