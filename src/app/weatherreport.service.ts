@@ -6,6 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class WeatherreportService {
+  
 
   constructor(private _httpClient:HttpClient) { }
       getweatherreport():Observable<any>{
