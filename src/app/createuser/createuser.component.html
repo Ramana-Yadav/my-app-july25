@@ -1,16 +1,25 @@
 <p>createuser works!</p>
 <form [formGroup]="userForm">
       <label>Name</label>
-      <input type="text" formControlName="name"><br>
+      <input type="text" formControlName="name" appCapital><br>
 
       <div *ngIf="userForm.get('name')?.touched&& userForm.get('name')?.invalid">
         <p *ngIf="userForm.get('name')?.errors?.['required']">name is required</p>
         <p *ngIf="userForm.get('name')?.errors?.['minlength']">name is min 6 characters</p>
-         <p *ngIf="userForm.get('name')?.errors?.['maxlength']">name is max 10 characters</p>
+        <p *ngIf="userForm.get('name')?.errors?.['maxlength']">name is max 10 characters</p>
+        
 
       </div>
       <label>Email</label>
       <input type="email" formControlName="email"><br>
+      <div *ngIf="userForm.get('email')?.touched&& userForm.get('name')?.invalid">
+        <p *ngIf="userForm.get('email')?.errors?.['required']">email is required</p>
+        <p *ngIf="userForm.get('email')?.errors?.['minlength']">email is min 6 characters</p>
+        <p *ngIf="userForm.get('email')?.errors?.['maxlength']">email is max 25 characters</p>
+        <p *ngIf="userForm.get('email')?.errors?.['appleMail']">please use apple mail only</p>
+        
+      </div>
+
       <label>Password</label>
       <input type="password" formControlName="password"><br>
       <label>Mobile Number</label>
@@ -65,4 +74,4 @@
     </div>
  </div>
 
-    <button (click)="submit()" class="btn btn-success"> Submit</button>
+    <button (click)="submit()" class="btn btn-success" [disabled]="!userForm.valid"> Submit</button>

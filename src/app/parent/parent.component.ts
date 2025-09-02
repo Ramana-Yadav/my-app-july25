@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { User } from '../user';
+import { RatingComponent } from '../rating/rating.component';
 
 @Component({
   selector: 'app-parent',
@@ -19,5 +21,12 @@ catch(value:number){
   // count(data:number){
   //   alert(data);
   // }
+
+userDetails:User={
+  name:'Ramana',
+  mobile:9542537173,
+  isIndian:true,
+}
+
 
 }
