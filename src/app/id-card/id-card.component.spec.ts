@@ -1,4 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing'; 
+import { FormsModule } from '@angular/forms';
 
 import { IdCardComponent } from './id-card.component';
 
@@ -8,7 +10,11 @@ describe('IdCardComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ IdCardComponent ]
+      declarations: [ IdCardComponent ],
+      imports: [HttpClientTestingModule,
+    FormsModule, // ✅ Add this
+    // other modules
+  ]
     })
     .compileComponents();
 

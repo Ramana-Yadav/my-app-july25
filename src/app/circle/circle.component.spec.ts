@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { FormsModule } from '@angular/forms';  //
 
 import { CircleComponent } from './circle.component';
 
@@ -8,7 +9,8 @@ describe('CircleComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CircleComponent ]
+      declarations: [ CircleComponent ],
+       imports: [FormsModule] 
     })
     .compileComponents();
 

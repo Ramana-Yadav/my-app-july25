@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
+import { HttpClientTestingModule } from '@angular/common/http/testing'; 
 import { PinInterestComponent } from './pin-interest.component';
 
 describe('PinInterestComponent', () => {
@@ -8,7 +9,8 @@ describe('PinInterestComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PinInterestComponent ]
+      declarations: [ PinInterestComponent ],
+      imports: [HttpClientTestingModule],
     })
     .compileComponents();
 
