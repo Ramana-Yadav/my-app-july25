@@ -44,6 +44,7 @@ import { AboutUsModule } from './about-us/about-us.module';
 import { CapitalDirective } from './capital.directive';
 import { RupeePipe } from './rupee.pipe';
 import { TokenInterceptor } from './token.interceptor';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -94,6 +95,7 @@ import { TokenInterceptor } from './token.interceptor';
     HttpClientModule,
     ReactiveFormsModule,
     AboutUsModule,
+    BrowserAnimationsModule,
   ],
   providers: [
     {
